@@ -4,28 +4,28 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Cont
 
 # ========== CONFIGURASI ==========
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")  # Ambil dari Railway Variables
-WEBHOOK_URL = os.getenv("https://diligent-charisma.railway.app", "")  # Optional untuk webhook
+WEBHOOK_URL = os.getenv("https://authentic-laughter.railway.app", "")  # Optional untuk webhook
 PORT = int(os.getenv("PORT", 8443))  # Port default Railway
-WEBAPP_URL = "https://rebrand.ly/bbtop"  # Ganti dengan URL website Anda
-LIVECHAT_URL = "https://direct.lc.chat/19031753/"
+WEBAPP_URL = "https://rebrand.ly/jendelatoto"  # Ganti dengan URL website Anda
+LIVECHAT_URL = "https://secure.livechatinc.com/customer/action/open_chat?license_id=18978655"
 # ========== HANDLER COMMAND ==========
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         # Kirim gambar dari folder assets
-        with open("assets/hamster.jpg", "rb") as photo:
+        with open("assets/jendelatoto.jpg", "rb") as photo:
             await update.message.reply_photo(
                 photo=photo,
-                caption="🎮 **BANGBOS SITUS PALING GACOR** - Mainkan Akun Gacormu Sekarang!",
+                caption="🪀 Jendelatoto Situs Paling Ngecor Untuk Anda, Dapatkan Jackpot Terbesar Sekarang 🎲",
                 parse_mode="Markdown"
             )
         
         # Buat tombol
         keyboard = [
-            [InlineKeyboardButton("▶️ PLAY NOW", url=WEBAPP_URL)],
-            [InlineKeyboardButton("📚 LIVECHAT", url=LIVECHAT_URL)]
+            [InlineKeyboardButton("🎮 PLAY NOW", url=WEBAPP_URL)],
+            [InlineKeyboardButton("🧙 LIVECHAT", url=LIVECHAT_URL)]
         ]
         await update.message.reply_text(
-            "Pilih tombol di bawah:",
+            "Klik tombol di bawah:",
             reply_markup=InlineKeyboardMarkup(keyboard)
         )
     except Exception as e:
